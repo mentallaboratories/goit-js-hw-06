@@ -17,13 +17,18 @@ const ingredients = [
 ];
 
 
-const ingredientsList = document.getElementById('ingredients');
+const ulEl = document.getElementById('ingredients');
 
 for (const ingredient of ingredients){
 
 const liEl = document.createElement('li');
-liEl.textContent = ingredient;
-ingredientsList.appendChild(liEl);
+ liEl.textContent = ingredient;
+  liEl.classList.add("item");
+ ulEl.appendChild(liEl);
 
 }
 
+
+
+// const listContent = ingredients.map((ingredient) => `<li>${ingredient}</li>`).join("");
+// ulEl.insertAdjacentHTML("beforeend" ,listContent);
