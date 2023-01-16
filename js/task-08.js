@@ -10,18 +10,17 @@ const onSubmit = (event)=>{
         elements: {email, password}
     } = event.currentTarget;
 
-    console.log();
 
 
     if (email.value === '' || password.value === ''){
         alert("Всі поля повинні бути заповнені")
     } else {
-         const formData = new FormData(event.currentTarget);
-        
-         formData.forEach((value, name) => {
-             console.log(name, " : ", value);
-         });
 
+        const obj = {email, password};
+        obj.email = email.value;
+        obj.password = password.value;
+        console.log(obj);
+        
 
         event.currentTarget.reset();
     }

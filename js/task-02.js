@@ -19,16 +19,19 @@ const ingredients = [
 
 const ulEl = document.getElementById('ingredients');
 
+const listItems = [];
 for (const ingredient of ingredients){
 
 const liEl = document.createElement('li');
- liEl.textContent = ingredient;
-  liEl.classList.add("item");
- ulEl.appendChild(liEl);
+liEl.classList.add("item");
+liEl.textContent = ingredient;
+
+listItems.push(liEl);
+
+ 
 
 }
 
+ulEl.append(...listItems);
 
 
-// const listContent = ingredients.map((ingredient) => `<li>${ingredient}</li>`).join("");
-// ulEl.insertAdjacentHTML("beforeend" ,listContent);
