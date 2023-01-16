@@ -32,8 +32,8 @@ function getRandomHexColor() {
 
 function createBoxes(event){
 
-  const w = 30;
-  const h = 30;
+  let w = 30;
+  let h = 30;
 
   if (amount !== 0){
     const div = document.createElement("div");
@@ -44,9 +44,12 @@ function createBoxes(event){
     boxesElArray.push(div);
 
   for (let i = 1; i<amount; i++){
+    w += 10;
+    h += 10;
+
     const div = document.createElement("div");
-    div.style.width = div.style.width+10;
-    div.style.height = div.style.height+10;
+    div.style.width = `${w}px`;
+    div.style.height = `${h}px`;
     div.style.backgroundColor = getRandomHexColor();
     console.log(div);
     boxesElArray.push(div);
